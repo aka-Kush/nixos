@@ -42,7 +42,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    filen-desktop
+    papirus-icon-theme 
     lsd 
     localsend
     git
@@ -66,9 +66,7 @@
     slurp
     dunst
     cliphist
-    imv
     viewnior
-    nwg-look
     vim
     xfce.tumbler
     ffmpegthumbnailer
@@ -106,6 +104,22 @@
     lxappearance-gtk2
     imagemagick
     gparted
+    xdg-utils
+    catppuccin-gtk
+    zafiro-icons
+    whitesur-cursors
+    neovim
+    gcc
+    curl
+    fzf
+    ripgrep
+    fd
+    bat
+    stylua
+    tree-sitter
+    lua-language-server
+    prettierd
+    eslint_d
   ];
 
   services.usbmuxd.enable = true;

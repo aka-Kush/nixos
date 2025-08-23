@@ -47,14 +47,14 @@
             ];
 
             general = {
-                gaps_in = 0;
-                gaps_out = 0;
+                gaps_in = 3;
+                gaps_out = 5;
                 border_size = 2;
                 "col.active_border" = "rgb(eebebe)";
                 "col.inactive_border" = "rgb(949cbb)";
                 resize_on_border = true;
                 allow_tearing = false;
-                layout = "dwindle";
+                layout = "master";
             };
 
             decoration = {
@@ -234,7 +234,7 @@
             windowrulev2 = [
                 "suppressevent maximize, class:.*"
                 "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
-            ];
+	        ];
         };
     };
 }
