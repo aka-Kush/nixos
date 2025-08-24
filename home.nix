@@ -3,16 +3,20 @@
 {
   imports = [
     ./configs/hyprland.nix
-    ./configs/waybar.nix
+    ./configs/waybar/waybar-cat.nix
+#    ./configs/waybar/waybar-gruv.nix
     ./configs/wlogout.nix
     ./configs/swaylock.nix
     ./configs/git.nix
     ./configs/fish.nix
-    ./configs/kitty.nix
-    ./configs/dunst.nix
+    ./configs/kitty/kitty-cat.nix
+#    ./configs/kitty/kitty-gruv.nix
+    ./configs/dunst/dunst-cat.nix
+#    ./configs/dunst/dunst-gruv.nix
     ./configs/scripts.nix
     ./configs/wofi.nix
-    ./configs/gtk.nix
+    ./configs/gtk/gtk-cat.nix
+#    ./configs/gtk/gtk-gruv.nix
     ./configs/lazyvim.nix
   ];
 

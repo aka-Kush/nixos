@@ -108,6 +108,8 @@
     catppuccin-gtk
     zafiro-icons
     whitesur-cursors
+    gruvbox-dark-gtk
+    gruvbox-plus-icons
     neovim
     gcc
     curl
