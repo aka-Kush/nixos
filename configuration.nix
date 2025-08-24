@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./configs/sddm.nix
   ];
   
   boot.loader = {
@@ -122,6 +123,7 @@
     lua-language-server
     prettierd
     eslint_d
+    catppuccin-sddm
   ];
 
   services.usbmuxd.enable = true;
@@ -136,7 +138,6 @@
 
   programs.fish.enable = true;
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
 
   # sound.enable = false;

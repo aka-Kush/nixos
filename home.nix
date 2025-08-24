@@ -18,6 +18,7 @@
     ./configs/gtk/gtk-cat.nix
 #    ./configs/gtk/gtk-gruv.nix
     ./configs/lazyvim.nix
+    ./configs/battery.nix
   ];
 
   home.username = "kush";
