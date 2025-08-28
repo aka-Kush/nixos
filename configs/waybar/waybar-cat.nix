@@ -86,7 +86,7 @@
           format = "";
           interval = "once";
           tooltip = false;
-          "on-click" = "wofi --show drun";
+          "on-click" = "wofi --show drun --allow-images";
         };
       };
     };

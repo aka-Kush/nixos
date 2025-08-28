@@ -10,8 +10,8 @@
       };
     };
     iconTheme = {
-      name = "Zafiro-icons-Dark";
-      package = pkgs.zafiro-icons;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
       name = "WhiteSur-cursors";

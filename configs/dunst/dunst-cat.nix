@@ -52,6 +52,13 @@
       # Markup
       markup = "full";
     };
+    urgency_critical = {
+        timeout = 0;  # Persistent until dismissed
+        background = "#f38ba8";  # Catppuccin red
+        foreground = "#1e1e2e";  # Dark text to contrast red
+        frame_color = "#f38ba8";
+        highlight = "#fab387";   # Optional accent (Catppuccin peach)
+      };
   };
 };
 

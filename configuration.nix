@@ -43,6 +43,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    libnotify
     papirus-icon-theme 
     lsd 
     localsend
@@ -50,6 +51,7 @@
     lshw
     waybar 
     wofi
+    jq
     swaylock
     kitty
     firefox
@@ -77,7 +79,6 @@
     libimobiledevice
     libreoffice-fresh
     xfce.thunar-archive-plugin 
-    unzip
     xarchiver
     gocryptfs
     unzip
@@ -124,6 +125,19 @@
     prettierd
     eslint_d
     catppuccin-sddm
+    go
+    ente-desktop
+    emacs-pgtk
+    pkg-config
+    gnupg
+    gnumake
+    pkg-config
+    autoconf
+    automake
+    libtool
+    tldr
+    rsync
+    cmake
   ];
 
   services.usbmuxd.enable = true;
@@ -136,9 +150,9 @@
     nerd-fonts.meslo-lg
   ];
 
-  programs.fish.enable = true;
   services.xserver.enable = true;
   programs.hyprland.enable = true;
+  programs.fish.enable = true;
 
   # sound.enable = false;
   services.pulseaudio.enable = false;
