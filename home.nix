@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, theme, ... }:
 {
+  _module.args = { inherit theme; };
   imports = [
-    
+
 # general configs
     ./configs/hyprland.nix
     ./configs/wlogout.nix
@@ -16,16 +16,10 @@
     ./configs/doom.nix
 
 # catppuccin theme configs
-    ./configs/waybar/waybar-cat.nix
-    ./configs/kitty/kitty-cat.nix
-    ./configs/dunst/dunst-cat.nix
-    ./configs/gtk/gtk-cat.nix
-
-# gruvbox theme configs
-#    ./configs/waybar/waybar-gruv.nix
-#    ./configs/dunst/dunst-gruv.nix
-#    ./configs/kitty/kitty-gruv.nix
-#    ./configs/gtk/gtk-gruv.nix
+    ./configs/gtk.nix
+    ./configs/waybar.nix
+    ./configs/kitty.nix
+    ./configs/dunst.nix
   ];
 
   home.username = "kush";
@@ -33,6 +27,12 @@
   home.stateVersion = "25.05"; 
   
   home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
+
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    GTK_THEME = theme.gtkTheme.name;
+    ICON_THEME = theme.iconTheme.name;
+  };
 
   programs.home-manager.enable = true;
 

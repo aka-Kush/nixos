@@ -1,3 +1,4 @@
+{ theme, ... }:
 {
   home.file = {
     "local/bin/reload-waybar.sh" = {
@@ -16,7 +17,7 @@
       text = ''
         #!/bin/sh
 
-        DIR="/home/$USER/Pictures/catppuccin"
+        DIR="/home/$USER/Pictures/${theme.wallpaper}"
         WAL="$(ls "$DIR"/*.{png,jpg} 2>/dev/null | shuf -n1)"
         cp "$WAL" "/home/$USER/.config/wall.jpg"
         swaybg -o eDP-1 -i /home/$USER/.config/wall.jpg --mode fill

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, theme, ... }:
 {
   programs.wlogout = {
     enable = true;
@@ -66,7 +66,7 @@
         }
 
         button:focus, button:active, button:hover {
-                background-color: rgba(149, 0, 179, 1.0);
+                background-color: ${theme.colors.waybar.color2};
                 outline-style: none;
         }#lock {
             background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));

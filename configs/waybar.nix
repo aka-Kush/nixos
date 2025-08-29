@@ -1,3 +1,5 @@
+{ config, pkgs, theme, ... }:
+
 {
   programs.waybar = {
     enable = true;
@@ -8,7 +10,9 @@
         position = "bottom";
         height = 10;
         spacing = 10;
-        background = "#E5D9B6";
+
+        # Waybar's JSON background field (solid). CSS below will apply the alpha.
+        background = theme.colors.waybar.color1;
 
         "modules-left" = [
           "custom/arch"
@@ -29,7 +33,7 @@
         tray = {
           "icon-size" = 21;
           spacing = 10;
-          background = "#E5D9B6";
+          background = theme.colors.waybar.color1;
         };
 
         clock = {
@@ -40,7 +44,7 @@
         backlight = {
           format = " {percent}% ";
           "format-icons" = [ "" "" ];
-          background = "#E5D9B6";
+          background = theme.colors.waybar.color1;
         };
 
         battery = {
@@ -86,86 +90,86 @@
           format = "";
           interval = "once";
           tooltip = false;
-          "on-click" = "wofi --show drun";
+          "on-click" = "wofi --show drun --allow-images";
         };
       };
     };
 
     style = ''
       * {
-          border: none;
-          font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Pro";
-          font-size: 14px;
-          font-weight: 600;
-          padding: 1px 2px;
+        border: none;
+        font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Pro";
+        font-size: 14px;
+        font-weight: 600;
+        padding: 1px 2px;
       }
 
+      /* Use color1 (#1e1e2e for Catppuccin Mocha) with 94% opacity */
       window#waybar {
-          background-color: rgba(30, 30, 46, 0.94);
+        background-color: ${theme.colors.waybar.colorbg};
       }
 
       .modules-left,
       .modules-right,
       .modules-center {
-          padding: 0 10px;
+        padding: 0 10px;
       }
 
       #workspaces button {
-          color: #a5adce;
-          background: none;
-          border: none;
-          outline: none;
-          padding: 5px;
-          border-radius: 0px;
+        color: ${theme.colors.waybar.color2};
+        background: none;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 0px;
       }
 
       #workspaces button:hover {
-          border: none;
-          outline: none;
-          color: #a6d189;
+        color: ${theme.colors.waybar.color3};
       }
 
       #workspaces button.active {
-          color: #e78284;
+        color: ${theme.colors.waybar.color4};
       }
 
       #window {
-          color: #f2d5cf;
+        color: ${theme.colors.waybar.color5};
       }
 
       #clock {
-          color: #e5c890;
+        color: ${theme.colors.waybar.color6};
       }
 
       #battery {
-          color: #babbf1;
-          margin-right: 5px;
+        color: ${theme.colors.waybar.color7};
+        margin-right: 5px;
       }
 
       #pulseaudio {
-          color: #81c8be;
-          margin-right: 10px;
+        color: ${theme.colors.waybar.color8};
+        margin-right: 10px;
       }
 
       #backlight {
-          color: #ca9ee6;
+        color: ${theme.colors.waybar.color9};
       }
 
       #tray {
-          color: #838ba7;
+        color: ${theme.colors.waybar.color10};
       }
 
       #custom-power {
-          color: #e64553;
-          font-weight: bold;
-          margin: 0 5px;
-          font-size: 1.2rem;
+        color: ${theme.colors.waybar.color4};
+        font-weight: bold;
+        margin: 0 5px;
+        font-size: 1.2rem;
       }
 
       #custom-arch {
-          font-weight: bold;
-          margin: 0 5px;
-          font-size: 1.3rem;
+        color: ${theme.colors.waybar.color10};
+        font-weight: bold;
+        margin: 0 5px;
+        font-size: 1.3rem;
       }
     '';
   };

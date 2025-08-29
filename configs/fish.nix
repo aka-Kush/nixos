@@ -20,4 +20,8 @@
             lsa = "lsd -al";
         };
     };
+#  programs.starship = {
+#    enable = true;
+#    enableFishIntegration = true;
+#  };
 }

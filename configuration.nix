@@ -125,6 +125,7 @@
     prettierd
     eslint_d
     catppuccin-sddm
+    rose-pine-gtk-theme
     go
     ente-desktop
     emacs-pgtk
@@ -138,6 +139,7 @@
     tldr
     rsync
     cmake
+    starship
   ];
 
   services.usbmuxd.enable = true;

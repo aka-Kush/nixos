@@ -1,22 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, theme, ... }:
 
 {
   gtk = {
     enable = true;
     theme = {
-      name = "catppuccin-mocha-blue-standard";
-      package = pkgs.catppuccin-gtk.override {
-        variant = "mocha";
-      };
+      name = theme.gtkTheme.name;
+      package = theme.gtkTheme.package;
     };
     iconTheme = {
-      name = "Zafiro-icons-Dark";
-      package = pkgs.zafiro-icons;
+      name = theme.iconTheme.name;
+      package = theme.iconTheme.package;
     };
     cursorTheme = {
-      name = "WhiteSur-cursors";
-      package = pkgs.whitesur-cursors;
-      size = 24;
+      name = theme.cursorTheme.name;
+      package = theme.cursorTheme.package;
+      size = theme.cursorTheme.size;
     };
-  };
+    };
 }

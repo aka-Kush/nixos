@@ -1,3 +1,5 @@
+{ config, pkgs, theme, ... }:
+
 {
     programs.kitty = {
         enable = true;
@@ -9,6 +11,6 @@
         confirm_os_window_close = "0";
         };
 
-        themeFile = "Catppuccin-Mocha";
+        themeFile = theme.kittyTheme;
     };
 }

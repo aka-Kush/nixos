@@ -1,3 +1,4 @@
+{ theme, ... }:
 {
     services.hyprpaper = {
         enable = true;
@@ -50,14 +51,8 @@
                 gaps_out = 5;
                 border_size = 2;
 
-                # Catppuccin Macchiato Theme
-                "col.active_border" = "rgb(a6da95)";     # green pastel
-                "col.inactive_border" = "rgb(6e738d)";   # muted lavender
-
-                # Gruvbox Theme
-                #"col.active_border" = "rgb(d79921)";     # yellow/orange
-                #"col.inactive_border" = "rgb(928374)";   # grey/brown muted
-                
+                "col.active_border" = theme.colors.hypr.active;
+                "col.inactive_border" = theme.colors.hypr.inactive;
                 resize_on_border = true;
                 allow_tearing = false;
                 layout = "master";
@@ -152,7 +147,9 @@
                 "ALT SHIFT, S, exec, spotify"
                 "ALT SHIFT, D, exec, discord"
                 "ALT SHIFT, F, exec, thunar"
-                "ALT SHIFT, C, exec, code"
+                "ALT SHIFT, V, exec, code"
+                "ALT SHIFT, C, exec, brave --app=https://chat.openai.com --incognito"
+                "ALT SHIFT, Y, exec, brave --app=https://www.youtube.com/"
                 "ALT SHIFT, P, exec, pavucontrol"
                 "ALT SHIFT, E, exec, emacsclient -c -a emacs"
 

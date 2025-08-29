@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, theme, ... }:
 
 {
   programs.wofi = {
     enable = true;
-# Use snake_case keys as per Home Manager docs
     settings = {
       show_icons = true;
       allow_markup = true;
@@ -12,13 +11,14 @@
       border_radius = 12;
       line_height = 40;
       display-drun = "Applications:";
-      background = "rgba(30, 30, 46, 0.95)";             # Catppuccin Base, 95% opacity
-        foreground = "#CDD6F4";                            # Text color
-        highlight = "#89B4FA";                             # Blue highlight
-        highlighted_background = "rgba(49, 50, 68, 0.9)";  # Surface0
-        selected_background = "#89DCEB";                   # Sky
-        selected_foreground = "#1E1E2E";                   # Base
+      background = theme.colors.waybar.colorbg;             # background
+      foreground = theme.colors.waybar.color10;             # text
+      highlight = theme.colors.waybar.color6;               # blue
+      highlighted_background = theme.colors.waybar.color6;
+      selected_background = theme.colors.waybar.color5;     # teal
+      selected_foreground = theme.colors.waybar.color1;     # base
     };
+
     style = ''
       * {
         font-family: "JetBrainsMono Nerd Font";
@@ -29,7 +29,7 @@
         margin: 10px;
         border-radius: 12px;
         padding: 10px;
-        background-color: rgba(30, 30, 46, 0.85); /* Base */
+        background-color: ${theme.colors.waybar.colorbg};
       }
 
       #input {
@@ -37,8 +37,8 @@
         border: none;
         padding: 10px;
         border-radius: 8px;
-        background-color: rgba(49, 50, 68, 0.6); /* Surface0 */
-        color: #CDD6F4; /* Text */
+        background-color: ${theme.colors.waybar.colorbg};
+        color: ${theme.colors.waybar.color10};
       }
 
       #entry {
@@ -47,22 +47,26 @@
       }
 
       #entry:selected {
-        background-color: #89B4FA; /* Blue */
-        color: #1E1E2E;            /* Base */
+        background-color: ${theme.colors.waybar.color6};
+        color: ${theme.colors.waybar.color1};
       }
 
       #text {
-        color: #CDD6F4; /* Text */
+        color: ${theme.colors.waybar.color10};
       }
 
       #text:selected {
-        color: #1E1E2E; /* Base */
+        color: ${theme.colors.waybar.colorbg};
+        background: transparent;
       }
 
       #img {
         margin-right: 8px;
       }
+
+      #img:selected {
+        background-color: transparent;
+      }
     '';
   };
 }
-

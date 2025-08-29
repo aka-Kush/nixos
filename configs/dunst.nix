@@ -1,58 +1,67 @@
+{ config, lib, pkgs, theme, ... }:
+
 {
   services.dunst = {
-  enable = true;
+    enable = true;
 
-  settings = {
-    global = {
-      font = "JetBrainsMono Nerd Font 10";
-      allow_markup = true;
-      format = "<b>%s</b>\n%b";
-      alignment = "left";
-      show_age_threshold = 60;
-      word_wrap = true;
-      ignore_newline = false;
-      transparency = 10;
-      separator_height = 2;
-      padding = 10;
-      horizontal_padding = 10;
-      frame_width = 2;
-      corner_radius = 8;
-      gap_size = 6;
-      icon_position = "left";
-      max_icon_size = 64;
-      min_icon_size = 32;
-      ellipsize = "middle";
+    settings = {
+      global = {
+        font = "JetBrainsMono Nerd Font 10";
+        allow_markup = true;
+        format = "<b>%s</b>\n%b";
+        alignment = "left";
+        show_age_threshold = 60;
+        word_wrap = true;
+        ignore_newline = false;
 
-      # Catppuccin Mocha unified styling
-      background = "#1e1e2e";
-      foreground = "#cdd6f4";
-      frame_color = "#89b4fa";
-      separator_color = "auto";
+        transparency = 0;
+        separator_height = 2;
+        padding = 10;
+        horizontal_padding = 10;
+        frame_width = 2;
+        corner_radius = 8;
+        gap_size = 6;
+        icon_position = "left";
+        max_icon_size = 64;
+        min_icon_size = 32;
+        ellipsize = "middle";
 
-      # Icons
-      icon_theme = "Papirus";
-      enable_recursive_icon_lookup = true;
+        # Colors.Dunst from theme
+        background      = theme.colors.dunst.background;
+        foreground      = theme.colors.dunst.foreground;
+        frame_color     = theme.colors.dunst.frame_color;
+        separator_color = theme.colors.dunst.separator_color;
 
-      # Positioning
-      geometry = "300x5-20+50";
-      layer = "top";
-      shrink = true;
-      follow = "mouse";
-      sticky_history = true;
+        # Icons
+        icon_theme = "Papirus";
+        enable_recursive_icon_lookup = true;
 
-      # Behavior
-      startup_notification = false;
-      indicate_hidden = true;
-      idle_threshold = 120;
-      history_length = 100;
-      show_indicators = true;
-      timeout = 8;
-      fullscreen = "show";
+        # Positioning
+        geometry = "300x5-20+50";
+        layer = "top";
+        shrink = true;
+        follow = "mouse";
+        sticky_history = true;
 
-      # Markup
-      markup = "full";
+        # Behavior
+        startup_notification = false;
+        indicate_hidden = true;
+        idle_threshold = 120;
+        history_length = 100;
+        show_indicators = true;
+        timeout = 8;
+        fullscreen = "show";
+
+        markup = "full";
+      };
+
+      urgency_critical = {
+        timeout     = 0;
+        background  = theme.colors.dunst.urgency_critical.background;
+        foreground  = theme.colors.dunst.urgency_critical.foreground;
+        frame_color = theme.colors.dunst.urgency_critical.frame_color;
+        highlight   = theme.colors.dunst.urgency_critical.highlight;
+      };
     };
   };
-};
-
 }
