@@ -133,7 +133,7 @@
                 "$mainMod, V, togglefloating,"
                 "$mainMod, space, exec, $menu"
                 "$mainMod, P, pseudo,"
-                "$mainMod, J, togglesplit,"
+                "$mainMod, T, togglesplit,"
                 "$mainMod, F, fullscreen"
                 "CONTROL_ALT, b, exec, wal"
                 "$mainMod SHIFT, R, exec, ~/local/bin/reload-waybar.sh"
