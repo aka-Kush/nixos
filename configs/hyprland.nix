@@ -34,11 +34,11 @@
 
             exec-once = [
                 "waybar"
- 		"wl-paste --type text --watch cliphist store"
+         		"wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
                 "hyprctl setcursor macOS 24"
                 "nm-applet &"
-                "swaybg -o eDP-1 -i .config/wall.jpg --mode fill &" 
+                "swaybg -o eDP-1 -i .config/wall.jpg --mode fill &"
                 "systemctl --user start hyprpolkitagent"
                 "wl-clip-persist --clipboard regular"
                 "wl-paste --type text --watch cliphist store"
@@ -55,7 +55,7 @@
                 "col.inactive_border" = theme.colors.hypr.inactive;
                 resize_on_border = true;
                 allow_tearing = false;
-                layout = "master";
+                layout = "dwindle";
             };
 
             decoration = {
@@ -138,7 +138,7 @@
                 "CONTROL_ALT, b, exec, wal"
                 "$mainMod SHIFT, R, exec, ~/local/bin/reload-waybar.sh"
                 "CONTROL_ALT, b, exec, ~/local/bin/wallpaper-changer.sh"
-                "$mainMod SHIFT, X, exec, wlogout"
+                "sh$mainMod SHIFT, X, exec, wlogout"
                 "ALT, TAB, exec, ~/local/bin/hypr-window-switcher.sh"
 
                 # Applications
@@ -160,11 +160,17 @@
                 # clipboard history
                 "SUPER_CTRL, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
 
-                # Move focus with mainMod + arrow keys
+                # Move focus and windows arrow keys
                 "$mainMod, left, movefocus, l"
                 "$mainMod, right, movefocus, r"
                 "$mainMod, up, movefocus, u"
                 "$mainMod, down, movefocus, d"
+
+                "$mainMod SHIFT, left, movewindow, l"
+                "$mainMod SHIFT, right, movewindow, d"
+                "$mainMod SHIFT, k, movewindow, u"
+                "$mainMod SHIFT, l, movewindow, r"
+
 
                 # Switch workspaces with mainMod + [0-9]
                 "$mainMod, 1, workspace, 1"
@@ -193,7 +199,17 @@
                 # Scroll through existing workspaces with mainMod + scroll
                 "$mainMod, mouse_down, workspace, e+1"
                 "$mainMod, mouse_up, workspace, e-1"
-  
+
+                # Vim binds to switch focus and move window
+                "$mainMod, h, movefocus, l"
+                "$mainMod, j, movefocus, d"
+                "$mainMod, k, movefocus, u"
+                "$mainMod, l, movefocus, r"
+
+                "$mainMod SHIFT, h, movewindow, l"
+                "$mainMod SHIFT, j, movewindow, d"
+                "$mainMod SHIFT, k, movewindow, u"
+                "$mainMod SHIFT, l, movewindow, r"
             ];
 
             bindm = [

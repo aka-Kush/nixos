@@ -1,3 +1,8 @@
+# available themes
+# catppuccin
+# gruvbox
+# rosepine
+
 { pkgs, ... }:
 
 let

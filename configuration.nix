@@ -125,6 +125,7 @@
     prettierd
     eslint_d
     catppuccin-sddm
+    swww
     rose-pine-gtk-theme
     go
     ente-desktop

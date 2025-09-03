@@ -1,8 +1,12 @@
+# catppuccin
+# gruvbox
+# rosepine
+
 { pkgs, ...}:
 
 let
   themes = import ./themes.nix { inherit pkgs; };
-  currentTheme = themes.themes.rosepine;
+  currentTheme = themes.themes.catppuccin;
 in
 {
   # Expose the top-level attributes needed by your other configs
