@@ -133,7 +133,7 @@
                 "$mainMod, V, togglefloating,"
                 "$mainMod, space, exec, $menu"
                 "$mainMod, P, pseudo,"
-                "$mainMod, J, togglesplit,"
+                "$mainMod, T, togglesplit,"
                 "$mainMod, F, fullscreen"
                 "CONTROL_ALT, b, exec, wal"
                 "$mainMod SHIFT, R, exec, ~/local/bin/reload-waybar.sh"
@@ -167,9 +167,9 @@
                 "$mainMod, down, movefocus, d"
 
                 "$mainMod SHIFT, left, movewindow, l"
-                "$mainMod SHIFT, right, movewindow, d"
-                "$mainMod SHIFT, k, movewindow, u"
-                "$mainMod SHIFT, l, movewindow, r"
+                "$mainMod SHIFT, right, movewindow, r"
+                "$mainMod SHIFT, up, movewindow, u"
+                "$mainMod SHIFT, down, movewindow, d"
 
 
                 # Switch workspaces with mainMod + [0-9]
