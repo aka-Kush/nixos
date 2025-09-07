@@ -34,17 +34,23 @@
           "icon-size" = 21;
           spacing = 10;
           background = theme.colors.waybar.color1;
+          "tooltip" = false;
         };
 
+        "hyprland/window" = {
+            tooltip = false;
+        };
         clock = {
           format = "  {:%I:%M }";
           "format-alt" = "{:%Y-%m-%d}";
+          "tooltip" = false;
         };
 
         backlight = {
           format = " {percent}% ";
           "format-icons" = [ "" "" ];
           background = theme.colors.waybar.color1;
+          "tooltip" = false;
         };
 
         battery = {
@@ -60,6 +66,7 @@
           "format-plugged" = "{capacity}%";
           "format-alt" = "{time} ";
           "format-icons" = [ "" "" "" "" "" ];
+          "tooltip" = false;
         };
 
         pulseaudio = {
@@ -71,6 +78,7 @@
           "format-source" = "{volume}% ";
           "format-source-muted" = "";
           "on-click" = "pavucontrol";
+          "tooltip" = false;
         };
 
         "custom/separator" = {
