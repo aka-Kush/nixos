@@ -35,7 +35,7 @@ let
 
       colors = {
         waybar = {
-          colorbg = "rgba(30, 30, 46, 0.94)";
+          colorbg = "rgba(30, 30, 46, 0.9)";
           color1  = "#1e1e2e"; # red
           color2  = "#fab387"; # peach
           color3  = "#f9e2af"; # yellow
@@ -91,7 +91,7 @@ let
 
       colors = {
         waybar = {
-          colorbg = "rgba(40, 40, 40, 0.94)";
+          colorbg = "rgba(40, 40, 40, 0.9)";
           color1  = "#282828"; # bg
           color2  = "#fe8019"; # orange
           color3  = "#fabd2f"; # yellow
@@ -149,7 +149,7 @@ let
 
       colors = {
         waybar = {
-          colorbg = "rgba(40, 42, 54, 0.94)"; # rosepine base bg with some opacity
+          colorbg = "rgba(40, 42, 54, 0.9)"; # rosepine base bg with some opacity
           color1  = "#191724"; # base
           color2  = "#eb6f92"; # rose pine pink (red)
           color3  = "#f6c177"; # pine (yellow/orange)

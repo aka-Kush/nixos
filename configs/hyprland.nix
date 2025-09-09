@@ -137,6 +137,7 @@
                 "$mainMod, F, fullscreen"
                 "CONTROL_ALT, b, exec, wal"
                 "$mainMod SHIFT, R, exec, ~/local/bin/reload-waybar.sh"
+                "CONTROL_ALT, w, exec, pkill -SIGUSR1 waybar" #toggle waybar
                 "CONTROL_ALT, b, exec, ~/local/bin/wallpaper-changer.sh"
                 "sh$mainMod SHIFT, X, exec, wlogout"
                 "ALT, TAB, exec, ~/local/bin/hypr-window-switcher.sh"

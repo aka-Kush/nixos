@@ -20,6 +20,7 @@
             lsa = "lsd -al";
             cleanthisbitch = "sudo nix-collect-garbage --delete-old ; sudo nix store gc ; sudo nixos-rebuild boot";
             buildthisbitch = "sudo nixos-rebuild switch --flake /etc/nixos/.#nixos";
+            updatethisbitch = "cd /etc/nixos && sudo nix flake update && buildthisbitch";
         };
     };
 #  programs.starship = {
