@@ -10,15 +10,12 @@
     ./configs/git.nix
     ./configs/fish.nix
     ./configs/scripts.nix
-    ./configs/lazyvim.nix
     ./configs/battery.nix
     ./configs/wofi.nix
-    ./configs/doom.nix
-
-# catppuccin theme configs
     ./configs/gtk.nix
     ./configs/waybar.nix
     ./configs/kitty.nix
+    ./configs/vscodium.nix
     ./configs/dunst.nix
   ];
 

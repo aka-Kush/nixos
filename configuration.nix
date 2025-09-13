@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ./configs/sddm.nix
   ];
-  
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -16,7 +16,10 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   services.flatpak.enable = true;
 
@@ -28,28 +31,31 @@
 
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
-  
+
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
-  
+
   users.users.kush = {
     isNormalUser = true;
     home = "/home/kush";
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     libnotify
-    papirus-icon-theme 
-    lsd 
+    papirus-icon-theme
+    lsd
     localsend
     git
     lshw
-    waybar 
+    waybar
     wofi
     jq
     swaylock
@@ -63,9 +69,10 @@
     wlogout
     brave
     spotify
-    vscode
+    audacity
+    vscodium
     pavucontrol
-    grim 
+    grim
     slurp
     dunst
     cliphist
@@ -75,10 +82,12 @@
     ffmpegthumbnailer
     libheif
     gvfs
+    ideviceinstaller
+    libplist
     ifuse
     libimobiledevice
     libreoffice-fresh
-    xfce.thunar-archive-plugin 
+    xfce.thunar-archive-plugin
     xarchiver
     gocryptfs
     unzip
@@ -89,20 +98,20 @@
     vulkan-validation-layers
     vulkan-headers
     vulkan-loader
-    vulkan-extension-layer 
+    vulkan-extension-layer
     glxinfo
     mesa-demos
     egl-wayland
     nvtopPackages.full
     brightnessctl
     ntfs3g
-    mpv 
+    mpv
     qbittorrent
     xdg-user-dirs
     xdg-user-dirs-gtk
     anytype
     discord
-    protonvpn-gui 
+    protonvpn-gui
     lxappearance-gtk2
     imagemagick
     gparted
@@ -117,19 +126,15 @@
     curl
     fzf
     ripgrep
+    wget
     fd
     bat
-    stylua
     tree-sitter
-    lua-language-server
-    prettierd
-    eslint_d
     catppuccin-sddm
     swww
     rose-pine-gtk-theme
     go
     ente-desktop
-    emacs-pgtk
     pkg-config
     gnupg
     gnumake
@@ -141,11 +146,22 @@
     rsync
     cmake
     starship
+    usbmuxd
+    nixfmt-rfc-style
+    # lsp linter formatter
+    lua-language-server
+    stylua
+    nixd
+    nixpkgs-fmt
+    statix
   ];
 
   services.usbmuxd.enable = true;
 
-  services.udev.packages = with pkgs; [ libimobiledevice usbmuxd ];
+  services.udev.packages = with pkgs; [
+    libimobiledevice
+    usbmuxd
+  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -189,11 +205,11 @@
   hardware.bluetooth.enable = true;
   services.gvfs.enable = true;
   services.power-profiles-daemon.enable = true;
-  
+
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ 
-      xdg-desktop-portal-hyprland 
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
       xdg-desktop-portal-wlr
     ];
   };
@@ -201,7 +217,13 @@
   fileSystems."/home/kush/DATA" = {
     device = "/dev/disk/by-uuid/4DD0ABE94BC14124";
     fsType = "ntfs";
-    options = [ "uid=1000" "gid=100" "dmask=022" "fmask=133" "windows_names" ];
+    options = [
+      "uid=1000"
+      "gid=100"
+      "dmask=022"
+      "fmask=133"
+      "windows_names"
+    ];
   };
 
   # localsend ports
@@ -210,7 +232,7 @@
     allowedTCPPorts = [ 53317 ];
     allowedUDPPorts = [ 53317 ];
   };
-  
+
   system.stateVersion = "25.05";
 
 }

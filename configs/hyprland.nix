@@ -43,7 +43,6 @@
                 "wl-clip-persist --clipboard regular"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
-                "emacs-doom-daemon &"
             ];
 
             general = {
@@ -71,9 +70,14 @@
                 };
                 blur = {
                     enabled = true;
-                    size = 5;
-                    passes = 2;
-                    vibrancy = 0.1;
+                    size = 7;
+                    passes = 3;
+                    # vibrancy = 0.1;
+                    ignore_opacity = true;
+                    noise = 0.08;
+                    contrast = 1.5;
+                    xray = false;
+                    new_optimizations = true;
                 };
             };
 
@@ -148,11 +152,10 @@
                 "ALT SHIFT, S, exec, spotify"
                 "ALT SHIFT, D, exec, discord"
                 "ALT SHIFT, F, exec, thunar"
-                "ALT SHIFT, V, exec, code"
+                "ALT SHIFT, V, exec, codium"
                 "ALT SHIFT, C, exec, brave --app=https://chat.openai.com --incognito"
                 "ALT SHIFT, Y, exec, brave --app=https://www.youtube.com/"
                 "ALT SHIFT, P, exec, pavucontrol"
-                "ALT SHIFT, E, exec, emacsclient -c -a emacs"
 
                 # screenshot
                 ", Print, exec, grim -g \"$(slurp)\" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-\$(date +%F_%T).png | dunstify 'Screenshot of the region taken' -t 1000" # screenshot of a region

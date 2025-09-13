@@ -15,5 +15,6 @@ in
   cursorTheme = currentTheme.cursorTheme;
   colors = currentTheme.colors;
   kittyTheme = currentTheme.kittyTheme;
+  vscodeTheme = currentTheme.vscodeTheme;
   wallpaper = currentTheme.wallpaper;
 }

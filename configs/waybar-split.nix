@@ -14,11 +14,14 @@
         # Waybar's JSON background field (solid). CSS below will apply the alpha.
         background = "transparent";
 
-        "modules-center" = [
+        "modules-left" = [
           "custom/arch"
           "hyprland/workspaces"
           "custom/separator"
           "hyprland/window"
+        ];
+
+        "modules-right" = [
           "pulseaudio"
           "backlight"
           "battery"
@@ -113,6 +116,8 @@ style = ''
     background-color: transparent;
   }
 
+  .modules-left,
+  .modules-right,
   .modules-center {
     padding: 0 10px;
   }
@@ -136,7 +141,6 @@ style = ''
 
   #window {
     color: ${theme.colors.waybar.color5};
-    margin-right: 50px;
   }
 
   #clock {
@@ -176,7 +180,8 @@ style = ''
   }
 
   /* The group backgrounds */
-  .modules-center
+  .modules-left,
+  .modules-right
  {
     background-color: ${theme.colors.waybar.colorbg};
     padding: 5px 15px;
