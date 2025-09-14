@@ -12,13 +12,16 @@
         spacing = 10;
 
         # Waybar's JSON background field (solid). CSS below will apply the alpha.
-        background = "transparent";
+        background = theme.colors.waybar.color1;
 
-        "modules-center" = [
+        "modules-left" = [
           "custom/arch"
           "hyprland/workspaces"
           "custom/separator"
           "hyprland/window"
+        ];
+
+        "modules-right" = [
           "pulseaudio"
           "backlight"
           "battery"
@@ -99,91 +102,82 @@
       };
     };
 
-style = ''
-  * {
-    border: none;
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Pro";
-    font-size: 14px;
-    font-weight: 600;
-    padding: 1px 2px;
-  }
+    style = ''
+      * {
+        border: none;
+        font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Pro";
+        font-size: 14px;
+        font-weight: 600;
+        padding: 1px 2px;
+      }
 
-  /* Use color1 (#1e1e2e for Catppuccin Mocha) with 94% opacity */
-  window#waybar {
-    background-color: transparent;
-  }
+      /* Use color1 (#1e1e2e for Catppuccin Mocha) with 94% opacity */
+      window#waybar {
+        background-color: ${theme.colors.waybar.colorbg};
+      }
 
-  .modules-center {
-    padding: 0 10px;
-  }
+      .modules-left,
+      .modules-right,
+      .modules-center {
+        padding: 0 10px;
+      }
 
-  #workspaces button {
-    color: ${theme.colors.waybar.color2};
-    background: none;
-    border: none;
-    outline: none;
-    padding: 5px;
-    border-radius: 0px;
-  }
+      #workspaces button {
+        color: ${theme.colors.waybar.color2};
+        background: none;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 0px;
+      }
 
-  #workspaces button:hover {
-    color: ${theme.colors.waybar.color3};
-  }
+      #workspaces button:hover {
+        color: ${theme.colors.waybar.color3};
+      }
 
-  #workspaces button.active {
-    color: ${theme.colors.waybar.color4};
-  }
+      #workspaces button.active {
+        color: ${theme.colors.waybar.color4};
+      }
 
-  #window {
-    color: ${theme.colors.waybar.color5};
-    margin-right: 50px;
-  }
+      #window {
+        color: ${theme.colors.waybar.color5};
+      }
 
-  #clock {
-    color: ${theme.colors.waybar.color6};
-  }
+      #clock {
+        color: ${theme.colors.waybar.color6};
+      }
 
-  #battery {
-    color: ${theme.colors.waybar.color7};
-    margin-right: 5px;
-  }
+      #battery {
+        color: ${theme.colors.waybar.color7};
+        margin-right: 5px;
+      }
 
-  #pulseaudio {
-    color: ${theme.colors.waybar.color8};
-    margin-right: 10px;
-  }
+      #pulseaudio {
+        color: ${theme.colors.waybar.color8};
+        margin-right: 10px;
+      }
 
-  #backlight {
-    color: ${theme.colors.waybar.color9};
-  }
+      #backlight {
+        color: ${theme.colors.waybar.color9};
+      }
 
-  #tray {
-    color: ${theme.colors.waybar.color10};
-  }
+      #tray {
+        color: ${theme.colors.waybar.color10};
+      }
 
-  #custom-power {
-    color: ${theme.colors.waybar.color4};
-    font-weight: bold;
-    margin: 0 5px;
-    font-size: 1.2rem;
-  }
+      #custom-power {
+        color: ${theme.colors.waybar.color4};
+        font-weight: bold;
+        margin: 0 5px;
+        font-size: 1.2rem;
+      }
 
-  #custom-arch {
-    color: ${theme.colors.waybar.color10};
-    font-weight: bold;
-    margin: 0 5px;
-    font-size: 1.3rem;
-  }
-
-  /* The group backgrounds */
-  .modules-center
- {
-    background-color: ${theme.colors.waybar.colorbg};
-    padding: 5px 15px;
-    border-radius: 10px;
-    margin: 0 10px;
-  }
-
-'';
+      #custom-arch {
+        color: ${theme.colors.waybar.color10};
+        font-weight: bold;
+        margin: 0 5px;
+        font-size: 1.3rem;
+      }
+    '';
   };
 }

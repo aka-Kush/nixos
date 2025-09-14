@@ -6,8 +6,8 @@
 { pkgs, ... }:
 
 let
-  mkTheme = { name, wallpaper, gtkTheme, iconTheme, cursorTheme, kittyTheme, vscodeTheme, colors }: {
-    inherit name wallpaper gtkTheme iconTheme cursorTheme kittyTheme vscodeTheme colors;
+  mkTheme = { name, wallpaper, gtkTheme, iconTheme, cursorTheme, kittyTheme, vscodeTheme, nvimTheme, lualineTheme, colors }: {
+    inherit name wallpaper gtkTheme iconTheme cursorTheme kittyTheme vscodeTheme nvimTheme lualineTheme colors;
   };
 
   themes = {
@@ -33,6 +33,8 @@ let
 
       kittyTheme = "Catppuccin-Mocha";
       vscodeTheme = "Catppuccin Mocha";
+      nvimTheme = "catppuccin";
+      lualineTheme = "dracula";
 
       colors = {
         waybar = {
@@ -90,6 +92,8 @@ let
 
       kittyTheme = "gruvbox-dark-hard";
       vscodeTheme = "Gruvbox Material Dark";
+      nvimTheme = "gruvbox";
+      lualineTheme = "gruvbox_dark";
 
       colors = {
         waybar = {
@@ -149,6 +153,8 @@ let
 
       kittyTheme = "rose-pine";
       vscodeTheme = "Rosé Pine";
+      nvimTheme = "rose-pine";
+      lualineTheme = "palenight";
 
       colors = {
         waybar = {

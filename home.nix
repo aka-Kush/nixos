@@ -29,6 +29,8 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
     GTK_THEME = theme.gtkTheme.name;
     ICON_THEME = theme.iconTheme.name;
+    NVIM_THEME = theme.nvimTheme;
+    LUA_LINE = theme.lualineTheme;
   };
 
   programs.home-manager.enable = true;
