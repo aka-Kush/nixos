@@ -26,10 +26,6 @@
     "flakes"
   ];
 
-  nixpkgs.config = {
-    permittedInsecurePackages = lib.optional (pkgs.obsidian.version == "1.9.12") "electron-37.4.0";
-  };
-
   services.flatpak.enable = true;
 
   nix.gc = {
@@ -66,7 +62,6 @@
     lsd
     networkmanagerapplet
     brave
-    obsidian
     spotify
     audacity
     vscodium
@@ -171,6 +166,7 @@
     black
     pyright
     pylint
+    nixfmt-rfc-style
 
     # languages
     nodejs_24

@@ -40,6 +40,7 @@
       eamodio.gitlens
       jnoortheen.nix-ide
       pkief.material-icon-theme
+      dracula-theme.theme-dracula
     ];
   };
 }
