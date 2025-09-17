@@ -1,4 +1,4 @@
-{ theme, ... }:
+{ pkgs, theme, ... }:
 {
   home.file = {
     "local/bin/reload-waybar.sh" = {
@@ -24,18 +24,18 @@
       '';
     };
 
- "local/bin/hypr-window-switcher.sh" = {
-  executable = true;
-  text = ''
-    #!/usr/bin/env bash
+    "local/bin/hypr-window-switcher.sh" = {
+      executable = true;
+      text = ''
+        #!/usr/bin/env bash
 
-    selected=$(hyprctl clients -j | jq -r '.[] | "\(.address) \(.class) - \(.title)"' | wofi --dmenu --prompt "Windows")
+        selected=$(hyprctl clients -j | jq -r '.[] | "\(.address) \(.class) - \(.title)"' | wofi --dmenu --prompt "Windows")
 
-    [ -z "$selected" ] && exit 0  # if nothing selected
+        [ -z "$selected" ] && exit 0  # if nothing selected
 
-    addr=$(echo "$selected" | awk '{print $1}')
-    hyprctl dispatch focuswindow address:$addr
-  '';
-};
+        addr=$(echo "$selected" | awk '{print $1}')
+        hyprctl dispatch focuswindow address:$addr
+      '';
+    };
   };
 }

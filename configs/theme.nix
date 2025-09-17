@@ -6,7 +6,7 @@
 
 let
   themes = import ./themes.nix { inherit pkgs; };
-  currentTheme = themes.themes.catppuccin;
+  currentTheme = themes.themes.rosepine;
 in
 {
  # Expose the top-level attributes needed by your other configs

@@ -9,6 +9,7 @@
       if not contains $HOME/.local/state/nix/profiles/profile/bin $fish_user_paths
         set -U fish_user_paths $HOME/.local/state/nix/profiles/profile/bin $fish_user_paths
       end
+      colorscript random
         '';
         shellAliases = {
             ls = "lsd -l";

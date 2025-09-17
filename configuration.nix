@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -20,6 +25,10 @@
     "nix-command"
     "flakes"
   ];
+
+  nixpkgs.config = {
+    permittedInsecurePackages = lib.optional (pkgs.obsidian.version == "1.9.12") "electron-37.4.0";
+  };
 
   services.flatpak.enable = true;
 
@@ -49,33 +58,19 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    libnotify
-    papirus-icon-theme
-    lsd
+    # Applications
     localsend
-    git
-    lshw
-    waybar
-    wofi
-    jq
-    swaylock
     kitty
     firefox
     xfce.thunar
+    lsd
     networkmanagerapplet
-    swaybg
-    hyprpolkitagent
-    wl-clipboard
-    wlogout
     brave
+    obsidian
     spotify
     audacity
     vscodium
     pavucontrol
-    grim
-    slurp
-    dunst
-    cliphist
     viewnior
     vim
     xfce.tumbler
@@ -91,6 +86,50 @@
     xarchiver
     gocryptfs
     unzip
+    ntfs3g
+    mpv
+    qbittorrent
+    xdg-user-dirs
+    xdg-user-dirs-gtk
+    anytype
+    discord
+    protonvpn-gui
+    imagemagick
+    gparted
+    xdg-utils
+    catppuccin-gtk
+    zafiro-icons
+    whitesur-cursors
+    gruvbox-dark-gtk
+    gruvbox-plus-icons
+    neovim
+    papirus-icon-theme
+    git
+    starship
+    dwt1-shell-color-scripts
+    usbmuxd
+    catppuccin-sddm
+    rose-pine-gtk-theme
+    ente-desktop
+
+    # hyprland
+    waybar
+    wofi
+    swaylock
+    swaybg
+    hyprpolkitagent
+    wl-clipboard
+    wlogout
+    grim
+    slurp
+    dunst
+    cliphist
+    libnotify
+    lshw
+    jq
+    brightnessctl
+
+    # graphics
     nvidia-vaapi-driver
     libva
     libva-utils
@@ -103,25 +142,8 @@
     mesa-demos
     egl-wayland
     nvtopPackages.full
-    brightnessctl
-    ntfs3g
-    mpv
-    qbittorrent
-    xdg-user-dirs
-    xdg-user-dirs-gtk
-    anytype
-    discord
-    protonvpn-gui
-    lxappearance-gtk2
-    imagemagick
-    gparted
-    xdg-utils
-    catppuccin-gtk
-    zafiro-icons
-    whitesur-cursors
-    gruvbox-dark-gtk
-    gruvbox-plus-icons
-    neovim
+
+    # build tools
     gcc
     curl
     fzf
@@ -129,12 +151,6 @@
     wget
     fd
     bat
-    tree-sitter
-    catppuccin-sddm
-    swww
-    rose-pine-gtk-theme
-    go
-    ente-desktop
     pkg-config
     gnupg
     gnumake
@@ -145,15 +161,21 @@
     tldr
     rsync
     cmake
-    starship
-    usbmuxd
-    nixfmt-rfc-style
+
     # lsp linter formatter
     lua-language-server
     stylua
     nixd
     nixpkgs-fmt
     statix
+    black
+    pyright
+    pylint
+
+    # languages
+    nodejs_24
+    python313
+    go
   ];
 
   services.usbmuxd.enable = true;
