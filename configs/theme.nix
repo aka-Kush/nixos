@@ -1,16 +1,16 @@
 # catppuccin
 # gruvbox
 # rosepine
-# dracula 
+# dracula
 
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 let
   themes = import ./themes.nix { inherit pkgs; };
-  currentTheme = themes.themes.catppuccin;
+  currentTheme = themes.themes.gruvbox;
 in
 {
- # Expose the top-level attributes needed by your other configs
+  # Expose the top-level attributes needed by your other configs
   gtkTheme = currentTheme.gtkTheme;
   iconTheme = currentTheme.iconTheme;
   cursorTheme = currentTheme.cursorTheme;

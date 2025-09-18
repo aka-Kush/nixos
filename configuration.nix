@@ -53,126 +53,134 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    # Applications
-    localsend
-    kitty
-    firefox
-    xfce.thunar
-    lsd
-    networkmanagerapplet
-    brave
-    spotify
-    audacity
-    vscodium
-    pavucontrol
-    viewnior
-    vim
-    xfce.tumbler
-    ffmpegthumbnailer
-    libheif
-    gvfs
-    ideviceinstaller
-    libplist
-    ifuse
-    libimobiledevice
-    libreoffice-fresh
-    xfce.thunar-archive-plugin
-    xarchiver
-    gocryptfs
-    unzip
-    ntfs3g
-    mpv
-    qbittorrent
-    xdg-user-dirs
-    xdg-user-dirs-gtk
-    anytype
-    discord
-    protonvpn-gui
-    imagemagick
-    gparted
-    xdg-utils
-    catppuccin-gtk
-    zafiro-icons
-    whitesur-cursors
-    gruvbox-dark-gtk
-    gruvbox-plus-icons
-    neovim
-    papirus-icon-theme
-    git
-    starship
-    dwt1-shell-color-scripts
-    usbmuxd
-    catppuccin-sddm
-    rose-pine-gtk-theme
-    ente-desktop
+  environment.systemPackages =
+    with pkgs;
 
-    # hyprland
-    waybar
-    wofi
-    swaylock
-    swaybg
-    hyprpolkitagent
-    wl-clipboard
-    wlogout
-    grim
-    slurp
-    dunst
-    cliphist
-    libnotify
-    lshw
-    jq
-    brightnessctl
+    [
+      # Applications
+      localsend
+      kitty
+      firefox
+      xfce.thunar
+      lsd
+      networkmanagerapplet
+      brave
+      spotify
+      audacity
+      vscodium
+      pavucontrol
+      viewnior
+      vim
+      xfce.tumbler
+      ffmpegthumbnailer
+      libheif
+      gvfs
+      ideviceinstaller
+      libplist
+      ifuse
+      libimobiledevice
+      libreoffice-fresh
+      xfce.thunar-archive-plugin
+      xarchiver
+      gocryptfs
+      unzip
+      ntfs3g
+      mpv
+      qbittorrent
+      xdg-user-dirs
+      xdg-user-dirs-gtk
+      anytype
+      discord
+      protonvpn-gui
+      imagemagick
+      gparted
+      xdg-utils
+      catppuccin-gtk
+      zafiro-icons
+      whitesur-cursors
+      gruvbox-dark-gtk
+      gruvbox-plus-icons
+      neovim
+      papirus-icon-theme
+      git
+      starship
+      dwt1-shell-color-scripts
+      usbmuxd
+      catppuccin-sddm
+      rose-pine-gtk-theme
+      ente-desktop
 
-    # graphics
-    nvidia-vaapi-driver
-    libva
-    libva-utils
-    vulkan-tools
-    vulkan-validation-layers
-    vulkan-headers
-    vulkan-loader
-    vulkan-extension-layer
-    glxinfo
-    mesa-demos
-    egl-wayland
-    nvtopPackages.full
+      # hyprland
+      waybar
+      wofi
+      swaylock
+      swaybg
+      hyprpolkitagent
+      wl-clipboard
+      wlogout
+      grim
+      slurp
+      dunst
+      cliphist
+      libnotify
+      lshw
+      jq
+      brightnessctl
 
-    # build tools
-    gcc
-    curl
-    fzf
-    ripgrep
-    wget
-    fd
-    bat
-    pkg-config
-    gnupg
-    gnumake
-    pkg-config
-    autoconf
-    automake
-    libtool
-    tldr
-    rsync
-    cmake
+      # graphics
+      nvidia-vaapi-driver
+      libva
+      libva-utils
+      vulkan-tools
+      vulkan-validation-layers
+      vulkan-headers
+      vulkan-loader
+      vulkan-extension-layer
+      glxinfo
+      mesa-demos
+      egl-wayland
+      nvtopPackages.full
 
-    # lsp linter formatter
-    lua-language-server
-    stylua
-    nixd
-    nixpkgs-fmt
-    statix
-    black
-    pyright
-    pylint
-    nixfmt-rfc-style
+      # build tools
+      gcc
+      curl
+      fzf
+      ripgrep
+      wget
+      fd
+      bat
+      pkg-config
+      gnupg
+      gnumake
+      pkg-config
+      autoconf
+      automake
+      libtool
+      tldr
+      rsync
+      cmake
 
-    # languages
-    nodejs_24
-    python313
-    go
-  ];
+      # lsp linter formatter
+      gopls
+      goimports-reviser
+      golangci-lint
+      lua-language-server
+      stylua
+      luajitPackages.luacheck
+      nixd
+      nixpkgs-fmt
+      statix
+      black
+      isort
+      pyright
+      pylint
+      nixfmt-rfc-style
+
+      # languages
+      nodejs_24
+      python313
+      go
+    ];
 
   services.usbmuxd.enable = true;
 
