@@ -107,11 +107,18 @@
       dwt1-shell-color-scripts
       usbmuxd
       catppuccin-sddm
+      everforest-gtk-theme
+      qogir-icon-theme
+      adw-gtk3
+      tela-circle-icon-theme
       rose-pine-gtk-theme
+      rose-pine-icon-theme
+      pywal16
       ente-desktop
 
       # hyprland
       waybar
+      waypaper
       wofi
       swaylock
       swaybg
@@ -159,6 +166,8 @@
       tldr
       rsync
       cmake
+      sassc
+      gtk-engine-murrine
 
       # lsp linter formatter
       gopls

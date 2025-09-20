@@ -1,13 +1,16 @@
 # catppuccin
 # gruvbox
 # rosepine
+# rosepine-dawn
 # dracula
+# everforest
+# adwaita
 
 { pkgs, ... }:
 
 let
   themes = import ./themes.nix { inherit pkgs; };
-  currentTheme = themes.themes.gruvbox;
+  currentTheme = themes.themes.rosepine;
 in
 {
   # Expose the top-level attributes needed by your other configs

@@ -3,8 +3,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/home/kush/.config/wall.jpg" ];
-      wallpaper = [ "eDP-1,/home/kush/.config/wall.jpg" ];
+      preload = [ "/home/kush/.config/wall.png" ];
+      wallpaper = [ "eDP-1,/home/kush/.config/wall.png" ];
     };
   };
 
